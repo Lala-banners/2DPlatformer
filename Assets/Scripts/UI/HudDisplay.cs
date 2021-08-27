@@ -25,8 +25,7 @@ public class HudDisplay : MonoBehaviour
     [Space] 
     
     [Header("Score & Life Counter")]
-    private float score;
-    public TMP_Text scoreText;
+    
     public Image[] lifeSlots;
     #endregion
     
@@ -111,10 +110,7 @@ public class HudDisplay : MonoBehaviour
     }
     
     #region Score
-    public void UpdateScore() {
-        score++;
-        scoreText.text = "Score: " + score;
-    }
+    
     #endregion
 
     public void PauseGame() {

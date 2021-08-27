@@ -13,6 +13,10 @@ public class Enemy : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
+    public int enemyHealth;
+    public int pointsOnDeath;
+    public GameObject deathEffect;
+
     // Start is called before the first frame update
     void Awake() {
         player = FindObjectOfType<PlayerController2D>().transform;
@@ -20,6 +24,13 @@ public class Enemy : MonoBehaviour
     }
 
     private void Update() {
+
+        if (enemyHealth <= 0)
+        {
+            Instantiate(deathEffect, transform.position, transform.rotation);
+            ScoreManager.instance.UpdateScore(pointsOnDeath);
+            gameObject.SetActive(false);
+        }
         
         if (timeBtwShots <= 0 && Vector2.Distance(transform.position, player.transform.position) < attackDist)
         {
@@ -60,5 +71,9 @@ public class Enemy : MonoBehaviour
             thisT.position = Vector3.Lerp(startPos, endPos, index);
             yield return null;
         }
+    }
+
+    public void EnemyTakeDmg(int damage) {
+        enemyHealth -= damage;
     }
 }

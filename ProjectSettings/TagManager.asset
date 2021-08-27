@@ -12,6 +12,7 @@ TagManager:
   - Tips
   - Projectile
   - Ladder
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

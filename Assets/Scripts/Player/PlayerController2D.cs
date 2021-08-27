@@ -99,12 +99,6 @@ public class PlayerController2D : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.CompareTag("Collectable"))
-        {
-            HudDisplay.instance.UpdateScore();
-        }
-    }
 
     /// <summary>
     /// Register collisions made with the player to cause damage.

@@ -4,8 +4,11 @@ public class LevelManager : MonoBehaviour
 {
     //Respawn point
     public GameObject currentCheckpoint;
-
+    //To take away points when player dies
+    public int takePointsOnDeath;
     private PlayerController2D player;
+    
+    
     
     public static LevelManager instance;
     
@@ -32,5 +35,6 @@ public class LevelManager : MonoBehaviour
         player.healthCurrent = 100;
         player.transform.position = currentCheckpoint.transform.position;
         HudDisplay.instance.lifeSlots[player.lifeCount].gameObject.SetActive(true);
+        ScoreManager.instance.UpdateScore(-takePointsOnDeath);
     }
 }
