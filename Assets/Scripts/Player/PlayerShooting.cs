@@ -2,34 +2,25 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    private float timeBtwShots;
-    public float startTimeBtwShots;
+    public Transform firePoint;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        timeBtwShots = startTimeBtwShots;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (timeBtwShots <= 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            //Spawn projectile
-            GameObject playerBullet = Pool.instance.GetPooledObject("PlayerBullet");
-            if (playerBullet != null)
-            {
-                playerBullet.transform.position = Pool.instance.spawnPos.transform.position;
-                playerBullet.transform.rotation = Pool.instance.spawnPos.transform.rotation;
-                playerBullet.SetActive(true);
-            }
-
-            timeBtwShots = startTimeBtwShots;
+            Shoot();
         }
-        else
+    }
+
+    public void Shoot() {
+        //Spawn projectile
+        GameObject playerBullet = Pool.instance.GetPooledObject("PlayerBullet");
+        if (playerBullet != null)
         {
-            timeBtwShots -= Time.deltaTime;
+            playerBullet.transform.position = firePoint.transform.position;
+            playerBullet.transform.rotation = firePoint.transform.rotation;
+            playerBullet.SetActive(true);
         }
     }
 }

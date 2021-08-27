@@ -1,13 +1,10 @@
-using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Stats")] public float speed;
+    [Header("Enemy Stats")]
     public float attackDist;
     public Transform player;
-    public Vector2 pointA;
-    public Vector2 pointB;
 
     [Header("Enemy Shooting")] 
     private float timeBtwShots;
@@ -27,16 +24,18 @@ public class Enemy : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
+            print("Enemy Dead");
+            StopAllCoroutines();
             Instantiate(deathEffect, transform.position, transform.rotation);
             ScoreManager.instance.UpdateScore(pointsOnDeath);
             gameObject.SetActive(false);
         }
         
-        if (timeBtwShots <= 0 && Vector2.Distance(transform.position, player.transform.position) < attackDist)
+        if (timeBtwShots <= 0)
         {
             //Spawn projectile
             GameObject projectile = Pool.instance.GetPooledObject("Projectile");
-            if (projectile != null)
+            if (Vector2.Distance(transform.position, player.transform.position) < attackDist)
             {
                 projectile.transform.position = Pool.instance.spawnPos.transform.position;
                 projectile.transform.rotation = Pool.instance.spawnPos.transform.rotation;
@@ -48,28 +47,6 @@ public class Enemy : MonoBehaviour
         else
         {
             timeBtwShots -= Time.deltaTime;
-        }
-    }
-
-    IEnumerator Start() {
-        pointA = transform.position;
-
-        while (true)
-        {
-            yield return StartCoroutine(Move(transform, pointA, pointB, 5.0f));
-            yield return StartCoroutine(Move(transform, pointB, pointA, 5.0f));
-        }
-    }
-
-    private IEnumerator Move(Transform thisT, Vector3 startPos, Vector3 endPos, float time) {
-        float index = 0.0f;
-        float rate = 1.0f / time;
-
-        while (index < 1.0f)
-        {
-            index += Time.deltaTime * rate;
-            thisT.position = Vector3.Lerp(startPos, endPos, index);
-            yield return null;
         }
     }
 

@@ -12,17 +12,24 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Level/Pickup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/SuperRetroShooter_Complete/SuperRetroShooter_Complete/Assets/Scripts/CollectPowerup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/SuperRetroShooter_Complete/SuperRetroShooter_Complete/Assets/Scripts/ShipController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/SuperRetroShooter_Complete/SuperRetroShooter_Complete/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/SuperRetroShooter_Complete/SuperRetroShooter_Complete/Assets/Scripts/ObjectPooler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerBullet.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/HudDisplay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController2D.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooting.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerProjectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/ScoreManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level/Pickup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerProjectile.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/CrawlingEnemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBullet.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1xHwq3Xu5r59ALYaFvL5nTRbVtr" />
@@ -71,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630025512916</updated>
-      <workItem from="1630025521119" duration="2105000" />
+      <workItem from="1630025521119" duration="8711000" />
     </task>
     <servers />
   </component>
