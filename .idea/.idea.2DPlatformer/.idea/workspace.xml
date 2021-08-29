@@ -27,9 +27,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerProjectile.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/CrawlingEnemy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooting.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1xHwq3Xu5r59ALYaFvL5nTRbVtr" />
@@ -78,7 +78,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630025512916</updated>
-      <workItem from="1630025521119" duration="8711000" />
+      <workItem from="1630025521119" duration="9055000" />
+      <workItem from="1630215265217" duration="2406000" />
     </task>
     <servers />
   </component>

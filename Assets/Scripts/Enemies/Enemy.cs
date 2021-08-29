@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Stats")]
+    [Header("Enemy Stats")] 
     public float attackDist;
+    public int enemyHealth;
     public Transform player;
 
     [Header("Enemy Shooting")] 
     private float timeBtwShots;
     public float startTimeBtwShots;
 
-    public int enemyHealth;
+    [Header("Enemy Death")]
     public int pointsOnDeath;
     public GameObject deathEffect;
 
@@ -21,27 +22,25 @@ public class Enemy : MonoBehaviour
     }
 
     private void Update() {
-
         if (enemyHealth <= 0)
         {
             print("Enemy Dead");
-            StopAllCoroutines();
-            Instantiate(deathEffect, transform.position, transform.rotation);
-            ScoreManager.instance.UpdateScore(pointsOnDeath);
-            gameObject.SetActive(false);
+            EnemyDie();
         }
-        
-        if (timeBtwShots <= 0)
+    }
+
+    public void Shoot() {
+        if (Vector2.Distance(transform.position, player.transform.position) <= attackDist)
         {
-            //Spawn projectile
-            GameObject projectile = Pool.instance.GetPooledObject("Projectile");
-            if (Vector2.Distance(transform.position, player.transform.position) < attackDist)
+            if (timeBtwShots <= 0)
             {
+                //Spawn projectile
+                GameObject projectile = Pool.instance.GetPooledObject("Projectile");
                 projectile.transform.position = Pool.instance.spawnPos.transform.position;
                 projectile.transform.rotation = Pool.instance.spawnPos.transform.rotation;
                 projectile.SetActive(true);
             }
-
+            
             timeBtwShots = startTimeBtwShots;
         }
         else
@@ -52,5 +51,12 @@ public class Enemy : MonoBehaviour
 
     public void EnemyTakeDmg(int damage) {
         enemyHealth -= damage;
+    }
+
+    public void EnemyDie() {
+        StopAllCoroutines();
+        Instantiate(deathEffect, transform.position, transform.rotation);
+        ScoreManager.instance.UpdateScore(pointsOnDeath);
+        gameObject.SetActive(false);
     }
 }

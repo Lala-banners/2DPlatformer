@@ -701,61 +701,6 @@ Transform:
   m_Father: {fileID: 1336104236}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &33792160
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 33792161}
-  - component: {fileID: 33792162}
-  m_Layer: 0
-  m_Name: Object Pool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &33792161
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33792160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &33792162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33792160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dffbae5944ea2f04a88b84342d83573b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObjects: []
-  itemsToPool:
-  - objectToPool: {fileID: 7602345349624872759, guid: 19f49e1bc5c27e24cbeced4c1ba0ef9f, type: 3}
-    amountToPool: 10
-    shouldExpand: 1
-  - objectToPool: {fileID: 5327011816410955593, guid: c0491aad1d991224f9efd52fe205451f, type: 3}
-    amountToPool: 10
-    shouldExpand: 1
-  - objectToPool: {fileID: 2767212129490499493, guid: 4511f6ebc227cff4fb618f1e46ffa00a, type: 3}
-    amountToPool: 1
-    shouldExpand: 0
-  spawnPos: {fileID: 1112295696}
 --- !u!1 &37332415
 GameObject:
   m_ObjectHideFlags: 0
@@ -18801,7 +18746,7 @@ Transform:
   m_Children:
   - {fileID: 1112295696}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &879538836
 Animator:
@@ -19818,7 +19763,7 @@ Transform:
   - {fileID: 1247455615}
   - {fileID: 22315470}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1002602190
 MonoBehaviour:
@@ -20855,7 +20800,7 @@ Transform:
   m_LocalScale: {x: 14.367877, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1260907840
 BoxCollider2D:
@@ -22051,6 +21996,7 @@ GameObject:
   - component: {fileID: 1420001666}
   - component: {fileID: 1420001667}
   - component: {fileID: 1420001668}
+  - component: {fileID: 1420001669}
   m_Layer: 0
   m_Name: LEVEL MANAGER
   m_TagString: Untagged
@@ -22122,6 +22068,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 876466392}
   takePointsOnDeath: 10
+--- !u!114 &1420001669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420001665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dffbae5944ea2f04a88b84342d83573b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  itemsToPool:
+  - objectToPool: {fileID: 7602345349624872759, guid: 19f49e1bc5c27e24cbeced4c1ba0ef9f, type: 3}
+    amountToPool: 10
+    shouldExpand: 1
+  - objectToPool: {fileID: 5327011816410955593, guid: c0491aad1d991224f9efd52fe205451f, type: 3}
+    amountToPool: 10
+    shouldExpand: 1
+  - objectToPool: {fileID: 2767212129490499493, guid: 4511f6ebc227cff4fb618f1e46ffa00a, type: 3}
+    amountToPool: 1
+    shouldExpand: 0
+  spawnPos: {fileID: 1112295696}
 --- !u!1 &1451285109
 GameObject:
   m_ObjectHideFlags: 0
@@ -26199,7 +26169,7 @@ Transform:
   m_Children:
   - {fileID: 949470864}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117898530
 GameObject:
